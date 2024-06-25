@@ -1,0 +1,1722 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{mdframed}
+\usepackage{graphicx} % Pour les logos ou images
+\usepackage{fancyhdr} % Pour les en-têtes et pieds de page personnalisés
+\usepackage{geometry} % Pour les marges de la page
+
+% Définition des marges de la page
+\geometry{
+    a4paper,
+    total={170mm,257mm},
+    left=20mm,
+    top=20mm,
+}
+
+% Configuration de l'en-tête
+\fancyhead{}
+\fancyhead[L]{Master 2 EDD \& ED}
+\fancyhead[R]{Université Paris 1 Panthéon-Sorbonne}
+\renewcommand{\headrulewidth}{0.4pt} % Épaisseur de la ligne de l'en-tête
+
+% Début du document
+\begin{document}
+
+
+% Utilisation de fancyhdr pour l'en-tête
+\pagestyle{fancy}
+
+% Titre de la page de garde
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    
+    \huge
+    \textbf{Replication Project}
+
+    \vspace{0.5cm}
+    \huge
+    Social protection amidst social upheaval:
+    Examining the impact of a multi-faceted program  
+    for ultra-poor households in Yemen\\
+    \vspace{1cm}
+    \large
+    Lasse Brune, Dean Karlan, Sikandra Kurdi, Christopher Udry
+    \vspace{2cm}
+    
+    \Large
+    Written by:\\
+    \large
+    H.Afifi; Y. Ben Hamida; R. Doss; C. Fayad; Z.A.Khan\\
+    \vfill
+
+    \Large
+    Paris 1 Panthéon-Sorbonne University\\
+    Master 2  (EDD \& ED)\\
+    \vspace{0.8cm}
+    \Large
+    2023-2024
+\end{titlepage}
+
+%Letter
+
+\newpage
+\section*{Letter to our fellows}
+\noindent
+\textbf{Authors}\\
+Paris, France\\
+\vspace{0.5cm}
+
+% Date
+\noindent
+\today\\
+\vspace{0.5cm}
+
+
+% Opening Salutation
+\noindent
+Dear Fellow Students,\\
+\vspace{0.5cm}
+
+% Letter Body
+
+We are excited to embark on this replication project together, where we will delve into the intricacies of Stata programming techniques. Our journey will be guided by the principles of econometric methods, with the goal of achieving meaningful results as a team.
+Our focus will be on the seminal work of Laura Brune, Dean Karlan, Salma Kurdi, and Christopher Udry, who explored the impact of social protection programs on ultra-poor households in Yemen. Their study provides an insightful framework for understanding real-world applications of econometrics.\newline
+
+\vspace{0.1cm}In our project, we will methodically replicate a randomized control trial. This will involve comparing the outcomes of two distinct groups of households: one that received benefits from a social protection program (the treatment group) and another that did not (the control group). \newline
+Our aim is to provide you with comprehensive explanations and guidance throughout this educational endeavor. We hope that this experience not only enhances your understanding of econometric methods but also inspires a deeper appreciation for the practical applications of these techniques in addressing global challenges.\newline
+
+\vspace{0.3cm}Looking forward to a productive and enlightening journey together.\vspace{0.5cm} 
+
+\vspace{0.5cm}
+% Closing
+\noindent
+Sincerely,\\
+\vspace{2cm} % Space for signature
+Y. Ben Hamida; R. Doss; C. Fayad; ZA.Khan ; H.Afifi
+
+% Insertion de la table des matières
+\newpage
+\tableofcontents
+
+
+\section*{Check the Original Papper !}
+
+Before delving into our discussion, we encourage you to review the original paper for a comprehensive understanding. You can access it \href{https://www.sciencedirect.com/science/article/pii/S0304387821001395}{here}.
+
+\subsection*{Reference}
+Brune, L., Karlan, D., Kurdi, S., \& Udry, C. (2022). Social protection amidst social upheaval: Examining the impact of a multi-faceted program for ultra-poor households in Yemen. Journal of Development Economics, 155, 102780.
+
+\subsection*{BibTeX Entry}
+\begin{verbatim}
+@article{brune2022social,
+  title={Social protection amidst social upheaval: Examining the impact of a multi-faceted program for ultra-poor households in Yemen},
+  author={Brune, Lasse and Karlan, Dean and Kurdi, Sikandra and Udry, Christopher},
+  journal={Journal of Development Economics},
+  volume={155},
+  pages={102780},
+  year={2022},
+  publisher={Elsevier}
+}
+\end{verbatim}
+
+\newpage
+
+\section{Paper Presentation}
+
+\hspace{0.3cm} Before starting the serious work, let’s start by diving through the main outlines of our replication paper and a set a proper framework:  
+
+
+\subsection{Summary of the paper}  
+The paper offers a comprehensive analysis of a social protection program designed to assist ultra-poor households in Yemen, particularly during a period of significant social and political upheaval. The main focus of the research is on evaluating the program's effectiveness in enhancing the economic stability and resilience of these households.
+Key components of the program include enterprise development training, productive asset transfer, savings encouragement, and education in areas such as social awareness, health care, and financial management. This multifaceted approach aims to address the complex challenges of extreme poverty in Yemen.
+This study thus provides valuable insights into the effectiveness of comprehensive social protection programs in contexts similar to Yemen, contributing to broader poverty alleviation strategies.
+
+\subsection{Research question} 
+
+What is the impact of a comprehensive social protection program on the economic stability and resilience of ultra-poor households in Yemen?
+
+\subsection{Methodology} 
+
+The study employs a randomized control trial method, initially involving 1002 households which were surveyed and then assigned to either a treatment group, receiving program benefits, or a control group. The findings present a nuanced view of the program's impact: notable increases in total assets, especially productive assets like livestock and agricultural tools, and improved savings outcomes were observed in the treatment group. However, these positive changes did not lead to increases in consumption or income, indicating that while the program effectively boosted asset accumulation and savings, it did not immediately improve living standards in terms of higher consumption or income.
+
+\subsection{Main findings} 
+
+The study revealed that households in the treatment group experienced a significant increase in total assets, particularly in productive assets like livestock and agricultural tools, and an improvement in savings outcomes. However, these positive changes did not translate into increased consumption or income. This indicates that while the program was effective in boosting asset accumulation and savings for ultra-poor households, it did not immediately lead to enhanced living standards in terms of higher consumption or income.
+
+\subsection{Final remarks about the paper} 
+ 
+\textbf{How this methodology belongs to a ‘standard’ of its kind ?} \newline
+
+The methodology of the study on a social protection program in Yemen aligns with standard randomized control trial (RCT) approaches in several key aspects. Firstly, the study employs randomization at the household level, a fundamental characteristic of RCTs, ensuring comparability between treatment and control groups. This design allows any observed differences to be attributed directly to the intervention. Secondly, the study conducts orthogonality analysis to verify the balance between treatment and control groups, ensuring that baseline variables are evenly distributed. This is crucial to confirm that differences in outcomes are due to the intervention and not pre-existing disparities. Additionally, robustness analysis is performed to address potential biases, particularly focusing on selective attrition, which helps ensure the reliability of the results. The paper also acknowledges the possibility of spillover effects and examines sharing patterns and other mechanisms to understand these impacts, although a quantitative assessment of spillovers is not feasible within the study's design. \newline
+
+\textbf{How this methodology departs from the ‘standard’ ?} \newline
+
+In contrast, the methodology also diverges from standard RCT practices in various ways. The paper explores the robustness of results considering differential survey attrition rates between the treatment and control groups, an aspect not commonly addressed in standard RCTs. This is achieved through bounding and reweighting exercises to mitigate potential bias from attrition. The study focuses on intent-to-treat estimates rather than the typical per-protocol analysis, analyzing the average treatment effect on all households initially identified as eligible, irrespective of their participation in the program. This approach poses challenges in answering queries about heterogeneous treatment effects and lowers the power for detecting average treatment effects, particularly for outcomes like per-capita consumption or household income. Furthermore, the paper discusses the cost-benefit ratio of the program, highlighting the difficulties in conducting a comprehensive analysis without data covering the entire four-year period. This leads to acknowledged limitations in drawing conclusions for certain outcomes, such as borrowing or food security, reflecting a departure from more conclusive standard RCT methodologies.
+
+
+\section{Replication target}
+You may ask at this level what are we going to replicate now? In this section, we will set together our work agenda for this replication:  
+
+\subsection{Table 1: Summary statistics}
+
+As a first step, we will need to dive into the data for a better understanding of the paper, so we will start by doing some summary statistics by replication the following table: 
+
+\includegraphics[width=\linewidth]{Table 1.png}
+
+\vspace{1cm}This table provides important information about the survey response rate, baseline characteristics of the households, and the balance between the treatment and control groups in terms of these baseline variables.
+
+\begin{itemize}
+
+    \item  \textbf{Panel A} highlights the end line survey response rates, showing that the treatment group had a higher response rate (89 percentage point) compared to the control group (85 percentage point). This 4-percentage point difference is statistically significant.
+
+    \item \textbf{Panel B} details baseline demographic and health variables of households, such as the number of adults and children, household size, average age and years of schooling of adult members, and characteristics of the household head (age, gender, schooling, and health). These statistics are presented with means and standard deviations for both treatment and control groups.
+
+    \item \textbf{Panel C} shows the results of joint orthogonality tests, assessing if there are significant differences in baseline variables between the two groups. These tests cover various sets of variables, including those in Panel B, primary outcomes in Table 2, secondary outcomes in Table 3, and all combined. The p-values from these tests are all above 0.05, indicating no significant differences between the treatment and control groups in terms of baseline variables, suggesting a balanced distribution across these groups.
+
+\end{itemize}
+
+
+
+
+\subsection{Table 2: treatment effects on key welfare outcomes}
+ 
+In the second step, we will try to get to the serious job by replicating the main treatment effect table: 
+
+\includegraphics[width=\linewidth]{Table 2.png}
+
+\begin{itemize}
+ 
+    \item Total Asset Value : Significant increase in total assets for the treatment group.
+    \item Monthly Consumption Per Capita: No significant effect on individual monthly consumption.
+    \item Monthly Consumption Per Household: No significant effect on household monthly consumption.
+    \item Total Income, Past 12 Months: No significant effect on total income over the past year.
+    \item Livestock Income, Past 12 Months: No significant effect on livestock income over the past year.
+    \item Non-Livestock Income, Past 12 Months : Significant increase in non-livestock income over the past year.
+    \item Food Security Index: No significant impact on food security.
+    \item Saving Index: Improvement in savings habits, though not robust to multiple hypothesis testing adjustments.
+    \item Perceived Economic Status: No significant impact on perceived economic status.
+    \item Housing Index: Information on statistical significance not provided.
+    \item Debt Index: Negative impact on the debt index, but not statistically significant.
+
+\end{itemize}
+
+The observed treatment effects in the study, specifically on primary outcomes like total assets and the savings index, are reliably linked to the program's objectives and remain robust even after adjustments for multiple hypothesis testing. This robustness indicates that the statistical significance of these effects is not just a result of random variation or the influence of conducting multiple comparisons. By making these adjustments, the researchers have enhanced the credibility of their findings, ensuring that the positive impacts on these key welfare outcomes are indeed attributable to the program and not chance occurrences.
+
+
+\section{Replication codes and explanation}
+
+In this section, we will try to go through the replication codes of Stata to be able to get the same results as the framework paper. The work is getting serious now, but don’t worry, we will go through this together!
+
+
+\subsection{Table 1: Endline survey response rate and baseline summary statistics}
+
+\subsubsection{Program definition}
+
+\begin{mdframed}
+    prog def yemenbalancetable
+\end{mdframed}
+
+This line defines a Stata program named "yemenbalancetable" that will generate endline survey response rate and baseline summary statistics for demographic variables, comparing control and treatment groups means
+
+
+\subsubsection{syntax definition}
+
+\begin{mdframed}
+    syntax varlist [if/], 		/// Variables to be included in the table 
+	[filename(string)] 		/// File name (default is TableX)
+	[foldername(string)]	/// Output folder name (default is Replication/Output)
+	[title(string)] 		/// Table title 
+	[footnote(string)] 		/// Footnote text 
+	[winsorize] 			/// Winsorize variables 
+	[balancevar(varlist)]	/// Balance variable (default is treatment)
+\end{mdframed}
+
+This section defines the syntax for the program, specifying the input parameters such as variables, file name, output folder name, table title, footnote, whether to winsorize variables, and the balance variable.
+
+\subsubsection{Prepare table inputs}
+
+\begin{mdframed}
+\begin{verbatim}
+// FOLDER NAME 
+// Set default folder to Replication/Output if not specified 
+if "`foldername'"=="" {
+	loc foldername "${rep_output}" }
+\end{verbatim}
+\end{mdframed}
+
+Checks if a folder name is specified; if not, sets the default folder to "Replication/Output."
+
+\begin{mdframed}
+\begin{verbatim}
+// FILE NAME 
+// Set a default filename 
+if "`filename'"=="" {
+	loc filename "Table1"}
+if "`winsorize'"=="winsorize" {
+	loc filename "`filename'_win"}
+if "`winsorize'"=="winsorize" {
+	loc filename "`filename'_win"}
+\end{verbatim}
+\end{mdframed}
+
+This line checks if a filename is specified; if not, sets the default filename to "Table1" or appends "win" if winsorization is selected.
+
+\begin{mdframed}
+\begin{verbatim}
+// WINSORIZE 
+// Edit varlist to include winsorized variable names if "winsorize" selected 
+if "`winsorize'"=="winsorize" {
+    loc templist `varlist'
+	loc varlist // Clear varlist 
+	foreach var in `templist' {
+		loc currvar = subinstr("`var'","_bsl","_win1_bsl",.) // Add "_win1" suffix 
+		loc varlist `varlist' `currvar' // Add to varlist if "winsorize" is selected
+	}
+}
+if "`winsorize'"=="winsorize" {
+	loc filename "`filename'_win"}
+\end{verbatim}
+\end{mdframed}
+
+If winsorization is selected, this code line modifies the variable list to include winsorized variables.
+
+
+\subsubsection{Create Table Framework}
+
+\begin{mdframed}
+\begin{verbatim}
+clear all
+eststo clear
+estimates drop _all
+\end{verbatim}
+\end{mdframed}
+
+This line clears existing data, stored estimates, and drops all existing estimates
+
+
+\begin{mdframed}
+\begin{verbatim}
+loc columns = 5 //Change the number of columns
+set obs 10
+gen x = 1
+gen y = 1
+\end{verbatim}
+\end{mdframed}
+
+Sets the number of columns in the table, creates a dataset with 10 observations, and generates dummy variables x and y.
+
+\begin{mdframed}
+\begin{verbatim}
+forval i = 1/`columns' {
+	eststo col`i': qui reg x y
+}
+\end{verbatim}
+\end{mdframed}
+
+Runs a loop to estimate regression models for x and y and stores the results in separate matrices ("col1", "col2", ..., "col5").
+
+\begin{mdframed}
+\begin{verbatim}
+loc count = 1
+loc countamt = `count' + 1
+\end{verbatim}
+\end{mdframed}
+
+Initializes counters for loop control.
+
+\begin{mdframed}
+\begin{verbatim}
+loc stats "" // Added scalars to be filled
+loc varlabels "" // Labels for row vars to be filled
+\end{verbatim}
+\end{mdframed}
+
+Initializes empty locals to store statistical values and variable labels
+
+
+
+\begin{mdframed}
+\begin{verbatim}
+use ${dirdata}hh_yemen_analysis, clear 
+\end{verbatim}
+\end{mdframed}
+Imports the dataset for analysis.
+
+\subsusbsection{Fill Table Cells}
+
+\begin{mdframed}
+\begin{verbatim}
+loc i = 0 // Start a counter 
+foreach var in `varlist' {
+    // ...
+}
+\end{verbatim}
+\end{mdframed}
+
+The first line initiates a loop to iterate over each variable in the variable list.
+
+\vspace{1cm} The following code within the loop calculates statistics for different categories (full sample, balance variable, control, p-values, observations) and updates locals.
+
+\subsubsection{Export table}
+
+\begin{mdframed}
+\begin{verbatim}
+cd "`foldername'" // Call the output folder directory 
+\end{verbatim}
+\end{mdframed}
+
+Changes the current directory to the specified output folder.
+
+
+
+\begin{mdframed}
+\begin{verbatim}
+esttab col* using "`filename'.csv", title("`title'") cells(none) ///
+	mtitle( "Full Sample" "`label1'" "`label2'" ///
+	"`label3'" ///
+	"Total N") stats(`stats', labels(`varlabels')) ///
+	note("`footnote'")  ///
+	compress wrap lines nonum replace plain
+\end{verbatim}
+\end{mdframed}
+
+Exports the table to a CSV file with the specified title, column titles, and statistical values.
+
+
+\begin{mdframed}
+\begin{verbatim}
+eststo clear
+end
+\end{verbatim}
+\end{mdframed}
+
+These two lines clear stored estimates and end the program definition.
+
+
+
+\begin{mdframed}
+\begin{lstlisting}[breaklines=true]
+yemenbalancetable num_adults_bsl nb_children_bsl hhsize_bsl avg_age_bsl avg_edu_years_bsl age_head_bsl hh_head_over60_bsl gender_head_bsl hh_head_educ_bsl disabl_head_bsl ///
+if endline_survey==1, ///
+filename("Table1") title("Table 1: Balance Test of Treatment Assignment for Endline Households Only") ///
+winsorize foldername("$rep_output")
+\end{lstlisting}
+\end{mdframed}
+
+Calls the defined program "yemenbalancetable" with specific variable list, conditions, and options:
+
+\begin{itemize}
+    \item yemenbalancetable: Calls the program named "yemenbalancetable" that was defined earlier in the code.
+    \item \texttt{Variables}: Lists the variables to be included in the analysis. These variables are num\_adults\_bsl, nb\_children\_bsl, hhsize\_bsl, avg\_age\_bsl, avg\_edu\_years\_bsl, age\_head\_bsl, hh\_head\_over60\_bsl, gender\_head\_bsl, hh\_head\_educ\_bsl, and disabl\_head\_bsl.
+    \item \texttt{if endline\_survey==1}: Specifies a condition for including only observations where the variable endline\_survey is equal to 1. This condition filters the data for endline households only.
+    \item \texttt{filename("Table1")}: Specifies the output filename as "Table1."
+    \item \texttt{title("Table 1: Balance Test of Treatment Assignment for Endline Households Only")}: Sets the title for the table as "Table 1: Balance Test of Treatment Assignment for Endline Households Only."
+    \item \texttt{winsorize}: Activates the winsorization option, indicating that the program should winsorize the specified variables.
+    \item \texttt{foldername("rep\_output")}: Sets the output folder name as "rep\_output," where rep\_output is the macro containing the directory path for the output.
+\end{itemize}
+
+\subsection{Replicate Table2: Treatment effect on key welfare outcomes}
+
+\subsubsection{Prepare table inputs}
+
+\underline{\textbf{Folder name}}
+
+\vspace{0.3cm} Comment on preparing table inputs: 
+
+\begin{mdframed}
+\begin{verbatim}
+// PREPARE TABLE INPUTS
+\end{verbatim}
+\end{mdframed}
+
+This is a comment for readability, indicating that the following lines of code are used for preparing inputs for the table generation process.
+
+Comment on Folder Name:
+\begin{mdframed}
+\begin{verbatim}
+// FOLDER NAME 
+// 	Set default folder to Replication/Output if not specified 
+\end{verbatim}
+\end{mdframed}
+
+
+Another comment explaining that the next line of code will set a default folder path for saving the output, specifically to a folder named "Replication/Output" if no other folder name is specified.
+	
+Conditional Folder Name Setting:
+\begin{mdframed}
+\begin{verbatim}
+if "`foldername'"=="" {
+	loc foldername "${rep_output}" 
+}
+\end{verbatim}
+\end{mdframed}
+
+
+\begin{itemize}
+    \item This line checks if the macro ‘foldername’ is empty (i.e., if no folder name has been specified earlier in the script).
+    \item \texttt{If ‘foldername’ is indeed empty, the line sets ‘foldername’ to the value stored in another macro called ‘\$\{rep\_output\}’.} 
+    \item \texttt{The \$\{rep\_output\} macro presumably contains the default path where the output should be saved,} 
+    \texttt{which in this context is likely to be something like "E:/.../Replication/Output".}
+    \item \texttt{The ‘loc’ command is short for local, which in Stata is used to define a local macro.} 
+    \texttt{A local macro is a sort of variable that can store text, which in this case,} 
+    \texttt{is being used to store a file path.}
+\end{itemize}
+
+In summary, this segment ensures that there is always a specified folder path to save the output of the script. If the user does not specify this path, the script defaults to a predefined path stored in the repoutput macro. This approach helps in automating the process and makes the script more user-friendly by reducing the need for manual input of file paths.
+
+\underline{\textbf{File name}}
+
+\vspace{0.3cm} This section of the code is designed to set up the filename for the output table in a statistical analysis. It ensures that the table is saved with an appropriate and descriptive name, reflecting various data processing steps like winsorization, baseline value adjustments, and additional controls.
+\vspace{0.3cm} Comment on File Name:
+
+
+
+\begin{mdframed}
+\begin{verbatim}
+// FILE NAME 
+// 	Set a default filename 
+\end{verbatim}
+\end{mdframed}
+
+These lines are comments for readability, indicating that the following code will be used for setting a default filename for the output file. \newline
+
+Setting Default Filename:
+\begin{mdframed}
+\begin{verbatim}
+if "`filename'"=="" {
+	loc filename "TableX"
+}
+\end{verbatim}
+\end{mdframed}
+
+\begin{itemize}
+    \item This line checks if the filename macro is empty (meaning no filename has been previously specified).
+    \item If it is empty, it sets the filename macro to a default value "TableX". This is done using the local (abbreviated as loc) command, which is used in Stata to define a temporary macro.
+\end{itemize}
+
+Adjusting Filename for Winsorization:
+\begin{mdframed}
+\begin{verbatim}
+if "`winsorize'"=="winsorize" {
+	loc filename "`filename'_win"
+}
+\end{verbatim}
+\end{mdframed}
+
+\begin{itemize}
+    \item This line checks if the data needs to be winsorized (a process to limit extreme values in the data for more robust statistical analysis).
+    \item If winsorization is specified ("winsorize"), it modifies the filename macro by appending win to its current value. This helps to indicate that the output file contains results from winsorized data.
+\end{itemize}
+
+Appending Baseline Values Indicator to Filename:
+\begin{mdframed}
+\begin{verbatim}
+if "`baselinevals'"=="baselinevals" {
+	loc filename "`filename'_blv"
+}
+\end{verbatim}
+\end{mdframed}
+
+\begin{itemize}
+    \item This line checks if baseline values are included in the analysis.
+    \item If so, it appends blv to the current filename macro value to indicate that the file includes baseline value adjustments.
+\end{itemize}
+
+
+Including Additional Controls in Filename:
+\begin{mdframed}
+\begin{verbatim}
+if "`addlcontrols'"!="" {
+	loc filename "`filename'_ctl"
+}
+\end{verbatim}
+\end{mdframed}
+
+\begin{itemize}
+    \item This line checks if there are any additional controls specified in the analysis.
+    \item If additional controls are included (indicated by \texttt{addlcontrols} not being empty), it appends \texttt{\_ctl} to the filename to reflect that the output file includes these additional controls.
+\end{itemize}
+
+In summary, these lines of code systematically adjust the filename for the output file based on specific data processing steps taken in the analysis. This naming convention makes it easier to understand what processing has been applied just by looking at the filename, thereby enhancing the clarity and manageability of the output files.
+
+
+
+\vspace{0.5cm}\underline{\textbf{WINSORIZE}}
+
+\vspace{0.2cm}This code segment is part of a statistical analysis script in Stata, specifically designed to modify variable names for winsorization. 
+
+\underline{Reminder:}
+What is Winsorization ?:  Winsorization is a technique used to reduce the effect of extreme outliers in data by replacing these extreme values with less extreme ones. 
+This segment of the code adjusts the list of variables (varlist) to reflect whether they have been winsorized.\newline 
+
+Comment on Winsorization:
+
+
+\begin{mdframed}
+\begin{verbatim}
+// WINSORIZE 
+//	Edit varlist to include winsorized variable names if "winsorize" selected 
+\end{verbatim}
+\end{mdframed}
+
+These comments explain that the following lines of code deal with editing the variable list for winsorization, indicating the purpose of the code block.\newline 
+
+Temporary List Creation:
+
+\begin{mdframed}
+\begin{verbatim}
+loc templist `varlist'
+\end{verbatim}
+\end{mdframed}
+
+Creates a temporary list (templist) that duplicates the original varlist. This is a common practice to preserve the original list while making modifications to the copy.\newline 
+
+Clearing the Original Variable List:
+\begin{mdframed}
+\begin{verbatim}
+loc varlist // Clear varlist
+\end{verbatim}
+\end{mdframed}
+
+
+Clears the original varlist. This is done to rebuild this list with modified variable names as needed.\newline 
+
+And now will detail the following command: 
+\begin{mdframed}
+\begin{verbatim}
+foreach var in `templist' {
+	loc currvar = subinstr("`var'","_end","",.) // Cut out "_end" suffix 
+	if "`winsorize'"=="winsorize" {
+		loc varlist `varlist' `currvar'_win1 // Add "_win1" suffix if "winsorize" is selected
+	}
+	if "`winsorize'"=="" {
+		loc varlist `varlist' `currvar'
+	}
+}
+\end{verbatim}
+\end{mdframed}
+
+Loop Through Each Variable:
+\begin{mdframed}
+\begin{verbatim}
+foreach var in `templist' {
+    ...
+}
+\end{verbatim}
+\end{mdframed}
+
+
+Begins a loop to iterate through each variable in the temporary list (templist). This loop allows the script to process each variable one by one. \newline 
+
+
+Modifying Variable Names for Winsorization:
+
+\begin{mdframed}
+\begin{verbatim}
+loc currvar = subinstr("`var'","_end","",.) // Cut out "_end" suffix
+\end{verbatim}
+\end{mdframed}
+
+For each variable (var) in templist, this line removes any "end" suffix from its name. This is done using the subinstr function, which substitutes part of a string with another string (in this case, replacing "end" with nothing).\newline 
+
+
+Appending Winsorization Suffix:
+\begin{mdframed}
+\begin{verbatim}
+if "`winsorize'"=="winsorize" {
+    loc varlist `varlist' `currvar'_win1 // Add "_win1" suffix if "winsorize" is selected
+}
+\end{verbatim}
+\end{mdframed}
+
+
+If winsorization is selected (indicated by the macro winsorize being equal to "winsorize"), this line appends "win1" to the current variable name (currvar). This indicates that the variable has been winsorized.\newline 
+
+Handling Non-Winsorized Variables:
+\begin{mdframed}
+\begin{verbatim}
+if "`winsorize'"=="" {
+    loc varlist `varlist' `currvar'
+}
+\end{verbatim}
+\end{mdframed}
+
+If winsorization is not selected, this line adds the current variable name (currvar) to the varlist without any modification.\newline 
+
+
+In summary, this code segment is responsible for updating the list of variables in the dataset to reflect whether they have been subjected to winsorization. This is crucial for accurate data analysis, as it ensures that any statistical procedures applied later in the script are aware of which variables have been modified to limit the impact of outliers.
+
+
+\vspace{0.5cm}\underline{\textbf{ADDITIONAL CONTROLS}}
+
+\vspace{0.2cm}This code segment from a Stata script is designed to handle additional control variables in a dataset, particularly in the context of winsorization. Winsorization is a statistical technique used to reduce the influence of extreme values. The script modifies the names of these additional control variables to reflect whether they have been winsorized. \newline
+
+Comment on Additional Controls:
+
+\begin{mdframed}
+\begin{verbatim}
+// ADDITIONAL CONTROLS
+\end{verbatim}
+\end{mdframed}
+
+This comment indicates that the following lines of code will manage additional control variables in the analysis. \newline
+
+Creation of Temporary List for Additional Controls:
+\begin{mdframed}
+\begin{verbatim}
+loc templist `addlcontrols'
+\end{verbatim}
+\end{mdframed}
+
+
+Creates a temporary list named templist that contains the variables specified in addlcontrols. This list will be used to process each additional control variable.\newline
+
+Clearing the Original Additional Controls List:
+\begin{mdframed}
+\begin{verbatim}
+loc addlcontrols
+\end{verbatim}
+\end{mdframed}
+
+Clears the existing addlcontrols list. 
+Why is this command important?: In order to repopulate it later with modified variable names. \newline
+
+And now will detail the following command: 
+\begin{mdframed}
+\begin{verbatim}
+foreach var in `templist' {
+	loc currvar = subinstr("`var'","_end","",.) // Cut out "_end" suffix 
+	if "`winsorize'"=="winsorize" {
+		loc varlist `varlist' `currvar'_win1 // Add "_win1" suffix if "winsorize" is selected
+	}
+	if "`winsorize'"=="" {
+		loc varlist `varlist' `currvar'
+	}
+}
+\end{verbatim}
+\end{mdframed}
+
+
+Looping Through Each Variable in the Temporary List:
+\begin{mdframed}
+\begin{verbatim}
+foreach var in `templist' {
+    ...
+}
+\end{verbatim}
+\end{mdframed}
+
+
+Starts a loop that will iterate through each variable in the templist. This allows for individual processing of each additional control variable.\newline
+
+Modifying Variable Names for Winsorization:
+\begin{mdframed}
+\begin{verbatim}
+loc currvar = subinstr("`var'","_bsl","_win1_bsl",.) // Cut out "_end" suffix
+\end{verbatim}
+\end{mdframed}
+
+For each variable in templist, this line replaces the "bsl" suffix with "win1bsl". The bsl likely indicates a baseline measurement, and the win1bsl indicates a winsorized baseline variable. The subinstr function is used for this string substitution. \newline
+
+Appending Winsorization Suffix for Additional Controls:
+
+\begin{mdframed}
+\begin{verbatim}
+if "`winsorize'"=="winsorize" {
+    loc addlcontrols `addlcontrols' `currvar' 
+    m_`currvar' // Add "_win1" suffix if "winsorize" is selected
+}
+\end{verbatim}
+\end{mdframed}
+
+
+
+
+If winsorization is selected, this line appends the modified variable name (currvar) and its 'missing' indicator version (mcurrvar) to the addlcontrols` list. This step indicates that the variable and its associated missing indicator have been winsorized. \newline
+
+Handling Non-Winsorized Additional Controls:
+\begin{mdframed}
+\begin{verbatim}
+if "`winsorize'"=="" {
+    loc varlist `addlcontrols' `var' m_`var'
+}
+\end{verbatim}
+\end{mdframed}
+
+If winsorization is not applied, this line adds both the original variable name (var) and its 'missing' indicator (mvar) to the addlcontrols` list without any modification. \newline
+
+All in all, this script segment deals with preparing additional control variables, specifically adjusting their names to reflect whether they have been winsorized. This is important for accurate data handling in later statistical analyses, ensuring that the analysis accurately reflects the treatment of these variables.
+
+
+\underline{\textbf{Fixed effects}}
+
+This snippet of Stata code is designed to set up fixed effects for a statistical model. \newline
+
+What are fixed effects used for? : Fixed effects are used in statistical analyses to control for variables that could affect the results but are not the primary focus of the research. \newline
+
+In this case, the script sets the village as the default fixed effect, provided that no other fixed effects have been specified. \newline
+
+Comment on Fixed Effects:
+
+
+\begin{mdframed}
+\begin{verbatim}
+// FIXED EFFECTS 
+// 	Set fixed effects to village, if not specified
+\end{verbatim}
+\end{mdframed}
+
+These comments explain the purpose of the following line of code. \newline
+
+What is their purpose?: To set a default fixed effect for the analysis if none is already specified. The default fixed effect is implied to be based on the 'village' variable. \newline
+
+Setting Default Fixed Effects:
+
+\begin{mdframed}
+\begin{verbatim}
+if "`fixedeffects'"=="" {
+    loc fixedeffects village 
+}
+\end{verbatim}
+\end{mdframed}
+
+\begin{itemize}
+    \item This line checks whether the fixedeffects macro is empty. The fixedeffects macro is presumably intended to store the names of variables that should be used as fixed effects in the analysis.
+    \item If fixedeffects is indeed empty (i.e., no fixed effects have been specified previously), the script sets fixedeffects to village using the local command (loc). This means that the variable village will be used as the default fixed effect in subsequent analyses.
+	\item Using the village as a fixed effect would control for any unobserved characteristics specific to each village that might influence the outcome being studied.
+\end{itemize}
+
+
+NB: This is a common approach in analyses where data is collected from different geographic locations or groups and where these locations or groups might have unique characteristics that could affect the results. \newline
+
+\vspace{0.3cm} In summary, this code ensures that there is a default fixed effect (village) in the statistical model, which is crucial for controlling for location-specific variables that could otherwise bias the analysis. This is particularly relevant in studies where geographic or group-specific factors are significant but are not the main focus of the research.
+
+
+\underline{\textbf{STANDARD ERRORS}}
+
+\vspace{0.3cm}This segment of Stata code configures the default setting for calculating standard errors in a statistical analysis. Standard errors are a crucial part of statistical analyses, as they measure the variability or uncertainty in the estimated parameters. The script specifically sets the standard errors to be 'robust,' provided that no other type of standard errors have been specified.\newline
+
+Comment on Standard Errors:
+
+
+\begin{mdframed}
+\begin{verbatim}
+// STANDARD ERRORS 
+//	Default standard errors to robust
+\end{verbatim}
+\end{mdframed}
+
+These comments explain that the following line of code sets a default method for calculating standard errors in the statistical analysis. The default method mentioned here is 'robust' standard errors. \newline
+
+Setting Default Standard Errors:
+
+
+\begin{mdframed}
+\begin{verbatim}
+if "`stderrors'"=="" {
+    loc stderrors robust 
+}
+\end{verbatim}
+\end{mdframed}
+
+\begin{itemize}
+    \item This line checks if the stderrors macro is empty, meaning no specific method for calculating standard errors has been defined earlier in the script.
+    \item If stderrors is indeed empty, it sets stderrors to 'robust' using the local command (loc). This implies that, in the absence of a specified method, the script will use 'robust' standard errors for its statistical analyses.
+    \item Robust standard errors, often used in regression analyses, are designed to provide more accurate standard error estimates when the standard assumptions (like homoscedasticity, where the variance of the error term is constant across observations) do not hold. They help to maintain the validity of hypothesis tests even when there are violations in these assumptions.
+\end{itemize}
+
+
+In summary, this code ensures that if no specific method for calculating standard errors is defined, the script will default to using 'robust' standard errors. This is a prudent choice in many empirical analyses, as it provides an extra layer of protection against certain types of model misspecification.
+
+
+
+\underline{\textbf{IF-STATEMENT}}
+
+\vspace{0.3cm} This portion of the Stata code is designed to manage conditional statements within the script. Conditional statements in statistical programming are used to apply certain operations or analyses only to specific subsets of the data, based on defined criteria. In this case, the code handles an if condition provided by the user. \newline
+
+Comment on IF-Statement:
+
+\begin{mdframed}
+\begin{verbatim}
+// IF-STATEMENT
+\end{verbatim}
+\end{mdframed}
+
+
+\vspace{0.3cm} This comment indicates that the following lines are related to setting up an if statement, a common programming construct used for conditional execution of code. \newline
+
+Setting Up Conditional Statement
+
+\begin{mdframed}
+\begin{verbatim}
+if "`if'"!="" {
+    loc ifif "if `if'"
+    loc andif "& `if'"
+}
+\end{verbatim}
+\end{mdframed}
+
+\begin{itemize}
+    \item This block checks whether the macro if is not empty ("!=""). The if macro is used here to store a condition that determines which subset of the data should be analyzed or manipulated. For example, it could be a condition like age > 30 to include only observations where age is greater than 30.
+    \item If the if macro is not empty, meaning a condition has been specified, two local macros are created:
+    \begin{itemize}
+        \item	ifif: This macro is set to "if if'"`, effectively creating a conditional statement that can be used directly in Stata commands. It allows for applying operations only to observations that meet the specified condition.
+    \item \texttt{andif}: Similar to \texttt{ifif}, but prefixed with "\& if". This is useful for adding the condition as an additional clause in commands where other conditions might already be present. The ampersand (\&) is a logical AND operator in Stata, used for combining multiple conditions.
+
+    \end{itemize}
+\end{itemize}
+
+In summary, this code segment prepares the script to handle user-defined conditions, enabling selective analysis of data based on specific criteria. It ensures that subsequent operations or analyses in the script are applied only to the subset of data that meets the defined condition, enhancing the script's flexibility and functionality.
+
+
+
+\underline{\textbf{BALANCE TESTING}}
+\vspace{0.3cm}This segment of the Stata code is designed to configure settings for balance testing in a statistical analysis. Balance testing is often used in experimental or quasi-experimental designs to ensure that different groups (like treatment and control groups) are comparable on various characteristics. This code sets up the necessary parameters for conducting such balance tests, contingent on specific user-defined conditions.\newline
+
+Comment on Balance Testing
+\begin{mdframed}
+\begin{verbatim}
+// BALANCE TESTING
+\end{verbatim}
+\end{mdframed}
+
+\vspace{0.3cm} This comment indicates that the ensuing lines of code are related to setting up balance testing in the analysis. Balance testing is a crucial step in many statistical analyses, particularly in observational studies or experiments, to check for equivalency between groups.\newline
+
+Conditional Setup for Balance Testing:
+\begin{mdframed}
+\begin{verbatim}
+if "`balance'"!="" {
+    loc balancevar `balance'
+    loc balance balance 
+}
+\end{verbatim}
+\end{mdframed}
+
+\begin{itemize}
+    \item This block checks if the macro balance is not empty. The balance macro is expected to contain a condition or a variable name that is relevant for conducting balance testing. For example, it could specify a treatment indicator variable.
+    \item If the balance macro is not empty (i.e., a balance condition or variable is specified):
+    \begin{itemize}
+        \item The line loc balancevar balance'creates a local macrobalancevarand assigns it the value stored in thebalance` macro. This step essentially stores the specified balance testing variable or condition for use in subsequent analyses.
+       \item The line loc balance balance seems redundant since it creates a local macro balance with the same value it already holds. This might be intended for clarity or to ensure consistency in macro naming conventions across different parts of the script.
+    \end{itemize}
+\end{itemize}
+
+\vspace{0.3cm}In summary, this code segment prepares the statistical analysis for balance testing by setting up the necessary parameters based on user-defined inputs. It ensures that the script can perform appropriate balance tests, which are essential for validating the comparability of different groups in the study.
+
+\underline{\textbf{FOOTNOTES}}
+
+\vspace{0.3cm}This section of Stata code is designed to generate footnotes for a statistical output, typically a table or a report. \newline
+
+What do these footnotes provide?
+These footnotes provide important information regarding specific data processing steps applied during the analysis, such as winsorization, inclusion of baseline values, or additional control variables. Accurate and informative footnotes are crucial for the transparency and clarity of statistical results. \newline
+
+Comment on Footnotes:
+\begin{mdframed}
+\begin{verbatim}
+// FOOTNOTES 
+// Add footnotes about baseline values and additional controls
+\end{verbatim}
+\end{mdframed}
+
+\vspace{0.3cm} This comment explains that the upcoming lines of code will add footnotes to a document or table. The purpose of these footnotes is to clarify certain aspects of the data processing, specifically regarding baseline values and additional controls.\newline
+
+Adding Footnote for Winsorization:
+
+\begin{mdframed}
+\begin{verbatim}
+if "`winsorize'"=="winsorize" {
+    loc footnote "`footnote' Variables winsorized at 1%."
+}
+\end{verbatim}
+\end{mdframed}
+
+\begin{itemize}
+    \item This line checks if the winsorize macro is set to "winsorize", indicating that winsorization has been applied to the variables in the analysis.
+    \item If winsorization is applied, it appends a statement to the existing footnote macro (or creates it if it doesn't exist), specifying that the variables have been winsorized at 1 percentage point. Winsorization is a method of limiting extreme values to reduce their impact, and specifying the level (1 percentage point in this case) is important for interpreting the results.
+\end{itemize}
+
+
+Adding Footnote for Baseline Values:
+
+\begin{mdframed}
+\begin{verbatim}
+if "`baselinevals'"=="baselinevals" {
+    loc footnote "`footnote' Controls for baseline value of dependent variable."
+}
+\end{verbatim}
+\end{mdframed}
+
+\begin{itemize}
+    \item This line checks if the baselinevals macro is set to "baselinevals", indicating that the analysis includes controls for baseline values of the dependent variable.
+    \item If baseline values are included, it appends a note to the footnote macro stating this fact. This is important for readers to understand the adjustments or controls applied in the analysis
+\end{itemize}
+
+Adding Footnote for Additional Controls:
+
+\begin{mdframed}
+\begin{verbatim}
+if "`addlcontrols'"!="" {
+    loc footnote "`footnote' Controls for additional variables."
+}
+\end{verbatim}
+\end{mdframed}
+
+\begin{itemize}
+    \item This line checks if the addlcontrols macro is not empty, meaning additional control variables have been specified for the analysis.
+    \item If there are additional controls, it appends a note to the footnote macro to indicate that the analysis controls for these additional variables.
+\end{itemize}
+
+In summary, these lines of code efficiently handle the addition of explanatory footnotes to statistical outputs. They ensure that crucial information about the data processing steps, like winsorization, baseline adjustments, and additional controls, is clearly communicated to anyone reviewing the results, enhancing the transparency and understanding of the analysis.
+
+
+\subsubsection{CREATE TABLE FRAMEWORK}
+\vspace{0.3cm}This segment of Stata code is focused on creating the framework for a table intended for statistical analysis. It involves clearing previous results, setting up a new data structure, and initializing various elements necessary for filling the table with appropriate statistical measures.\newline
+
+Comment on Creating Table Framework:
+\begin{mdframed}
+\begin{verbatim}
+// CREATE TABLE FRAMEWORK
+\end{verbatim}
+\end{mdframed}
+
+This comment indicates that the following lines of code are dedicated to setting up the structure for a statistical table.
+
+\underline{\textbf{Clear estimates}}
+
+\vspace{0.3cm} Clearing Previous Estimates:
+
+\begin{mdframed}
+\begin{verbatim}
+clear
+eststo clear
+estimates drop _all
+\end{verbatim}
+\end{mdframed}
+
+\begin{itemize}
+    \item 	\textbf{clear}: Clears the current dataset from memory.
+    \item \textbf{eststo clear}: Clears any stored estimation results.
+    \item estimates drop all: Drops all stored estimates.
+\end{itemize}
+
+\underline{\textbf{Create blank table}}
+
+\vspace{0.3cm}Creating a Blank Table
+
+\begin{mdframed}
+\begin{verbatim}
+set obs 10
+gen x = 1
+gen y = 1
+\end{verbatim}
+\end{mdframed}
+
+\begin{itemize}
+    \item set obs 10: Sets the number of observations in the dataset to 10.
+    \item gen x = 1 and gen y = 1: Generates two new variables, x and y, both filled with the value 1. This is a preparatory step for creating placeholder regressions.
+\end{itemize}
+
+\underline{\textbf{Count outcomes and create placeholder estimates}}
+
+\vspace{0.3cm} Counting Outcomes and Creating Placeholder Estimates
+
+\begin{mdframed}
+\begin{verbatim}
+loc columns: word count `varlist' 
+
+forval i = 1/`columns' { 
+    eststo col`i': qui reg x y
+}
+\end{verbatim}
+\end{mdframed}
+
+\begin{itemize}
+    \item loc columns: word count varlist': Counts the number of variables in varlistand stores this number in the local macrocolumns`.
+    \item The forval loop creates placeholder regression models for each variable in varlist. This is a preparatory step for later analyses.
+\end{itemize}
+
+And now will detail the following command: 
+
+\begin{mdframed}
+\begin{verbatim}
+loc j = 1
+loc treatcoef = `j'		// Treatment starred coefficient
+loc ++j
+loc treatse = `j'		// Treatment standard error 
+loc ++j
+loc contmean = `j'		// Control mean 
+loc ++j
+loc contsd = `j'		// Control standard deviation 
+loc ++j
+loc obs = `j'			// Observations 
+loc ++j
+loc blcontrols  = `j'	// Binary for baseline controls 
+loc ++j
+loc numzero = `j'		// Count with outcome == 0
+\end{verbatim}
+\end{mdframed}
+
+
+\underline{\textbf{Set table cell locals}}
+
+\vspace{0.3cm}Setting Table Cell Locals:
+
+\begin{mdframed}
+\begin{verbatim}
+loc j = 1
+loc treatcoef = `j'    // Treatment starred coefficient
+...
+loc numzero = `j'      // Count with outcome == 0
+\end{verbatim}
+\end{mdframed}
+
+\vspace{0.2cm} These lines initialize a series of local macros (treatcoef, treatse, contmean, etc.) to keep track of various statistical measures (like treatment effect, standard errors, means, standard deviations) for later use in the table.
+
+
+\underline{\textbf{Balance testing}}
+\vspace{0.3cm}Balance Testing Setup:
+
+\begin{mdframed}
+\begin{verbatim}
+if "`balance'"=="balance" {
+    loc ++j
+    loc baltest = `j'    // Balance test 
+    loc ++j
+    loc balproxy = `j'   // Proxy Flag 
+    loc balword1 "Balance Test p-Value"
+    loc balword2 "Proxy for Balance"  
+}
+\end{verbatim}
+\end{mdframed}
+
+
+\vspace{0.2cm}If balance testing is required (indicated by the balance macro), additional locals (baltest, balproxy) are created for storing balance test results. \newline
+
+Initializing Scalars and Column Titles:
+
+
+\begin{mdframed}
+\begin{verbatim}
+loc stats ""            // Added scalars to be filled
+loc col_titles ""       // Labels for columns vars to be filled
+\end{verbatim}
+\end{mdframed}
+
+\vspace{0.3cm}Two locals, stats and coltitles, are initialized as empty. They will later be used to store statistical results and column labels for the table.\newline
+
+Loading the Dataset:
+
+\begin{mdframed}
+\begin{verbatim}
+use ${dirdata}hh_yemen_analysis, clear
+\end{verbatim}
+\end{mdframed}
+
+\vspace{0.3cm} Loads a specified dataset (hhyemenanalysis) from a directory path stored in the macro dirdata, clearing any existing data in memory.\newline
+
+
+In summary, this code segment efficiently sets up the necessary infrastructure for creating a detailed statistical table. It involves initializing the dataset, setting up placeholder variables, and preparing locals for various statistical measures that will be calculated and displayed in the table. This setup is crucial for the subsequent steps in the analysis, where actual data will be processed and results populated into this framework.
+
+
+
+\subsubsection{REPLACE MISSINGS WITH ZEROS}
+
+\vspace{0.3cm}This section of the Stata code focuses on handling missing data within the dataset, specifically for additional control variables. \newline
+
+Why is it important to manage missing data?: In statistical analyses, managing missing data is crucial as it can impact the results and interpretations. This code replaces missing values in the specified additional control variables with zeros. \newline
+
+Comment on Replacing Missings with Zeros:
+
+\begin{mdframed}
+\begin{verbatim}
+// REPLACE MISSINGS WITH ZEROS
+\end{verbatim}
+\end{mdframed}
+
+This comment indicates that the following lines of code are designed to handle missing data within the dataset.
+
+
+\underline{\textbf{ADDITIONAL CONTROLS}}
+\vspace{0.3cm} Comment on Additional Controls:
+
+\begin{mdframed}
+\begin{verbatim}
+// ADDITIONAL CONTROLS 
+// 	Replace missings with zeroes
+\end{verbatim}
+\end{mdframed}
+
+\vspace{0.3cm} This comment further specifies that the operation of replacing missing values with zeros is particularly focused on the additional control variables. These are variables that might be used in the analysis to control for other factors, ensuring that the main effects studied are not confounded by these additional variables. \newline
+
+Looping Through Additional Controls:
+\begin{mdframed}
+\begin{verbatim}
+foreach var in `addlcontrols' {
+    replace `var' = 0 if missing(`var') // Replace to 0 if missing 
+}
+\end{verbatim}
+\end{mdframed}
+
+\begin{itemize}
+    \item 	The foreach loop iterates through each variable listed in the addlcontrols macro. This macro is expected to contain the names of the additional control variables.
+    \item Within the loop, the replace command is used for each variable (var). It sets the value of the variable to 0 wherever it is missing (missing(var')`). This step is crucial as it ensures that any analysis involving these variables does not get skewed or halted due to missing data.
+\end{itemize}
+\vspace{0.3cm}In summary, this code segment efficiently handles missing data in additional control variables by replacing missing values with zeros. This approach is a common method in data preparation, particularly useful when the absence of data can be reasonably substituted with a neutral value like zero, ensuring continuity and completeness of the dataset for further analysis.
+
+\underline{\textbf{FILL TABLE CELLS}}
+\vspace{0.3cm}This section of the Stata code is aimed at populating a table with statistical measures, such as coefficients, standard errors, and p-values. This is a crucial part of the data analysis process where results are organized into a structured format for interpretation and presentation. \newline
+
+Comment on Filling Table Cells:
+\begin{mdframed}
+\begin{verbatim}
+// FILL TABLE CELLS 
+//	Table cells include coefficients, standard errors, p-values
+\end{verbatim}
+\end{mdframed}
+
+\vspace{0.3cm}These comments introduce the objective of the following code: to fill the cells of a table with important statistical measures. Specifically, the table will include coefficients (indicative of the magnitude and direction of relationships in the data), standard errors (measuring the precision of the coefficients), and p-values (indicating the statistical significance of the results).\newline
+
+
+Initializing a Counter:
+
+\begin{mdframed}
+\begin{verbatim}
+loc i = 1 // Start a counter
+\end{verbatim}
+\end{mdframed}
+
+\vspace{0.3cm}This line initializes a local macro i with a value of 1. This macro serves as a counter that will be used to iterate through the variables and to keep track of the position or index within the table where results will be placed.\newline
+
+Loop Through Table Variables:
+
+
+\begin{mdframed}
+\begin{verbatim}
+foreach y_var in `varlist' { // Loop through table variables
+\end{verbatim}
+\end{mdframed}
+
+
+\begin{itemize}
+    \item •	Begins a foreach loop that iterates over each variable in varlist. The varlist macro is expected to contain a list of variables for which the statistical analysis is being conducted.
+    \item yvar is a placeholder within the loop, representing each variable in varlist as the loop progresses. For each iteration of the loop, yvar will take on the value of the next variable in varlist, and the statistical measures for that variable will be calculated and added to the table.
+\end{itemize}
+
+\vspace{0.3cm}To conclude, this code segment sets up a loop to systematically process a list of variables, calculating and recording key statistical measures for each one.\newline 
+
+The loop, guided by the counter i, ensures that all relevant variables in varlist are included in the analysis and that their corresponding results are accurately placed in the table
+
+
+\subsubsection{BASELINE CONTROLS}
+\vspace{0.3cm}This section of the Stata code deals with the handling of baseline control variables in a statistical analysis. \newline
+
+What are Baseline controls ?: Baseline controls are variables measured at the beginning of a study and are crucial for ensuring accurate and meaningful comparisons over time or between groups. \newline
+
+This code manages missing data in baseline variables, creates placeholders for missing baseline data, and notes whether baseline controls are utilized in the analysis. \newline
+
+Comment on Baseline Controls:
+
+\begin{mdframed}
+\begin{verbatim}
+// BASELINE CONTROLS 
+// 	Replace missings with zeroes 
+// 	Add "missing" dummies to controls
+\end{verbatim}
+\end{mdframed}
+
+\vspace{0.3cm} These comments explain that the following lines of code will handle baseline control variables, specifically focusing on replacing missing values and adding dummy variables for missing data.
+
+\underline{\textbf{Check whether baseline value exists}}
+\vspace{0.3cm} Checking for Baseline Variable:
+\begin{mdframed}
+\begin{verbatim}
+cap confirm variable `y_var'_bsl
+\end{verbatim}
+\end{mdframed}
+
+\vspace{0.3cm}This line uses the ‘confirm’ command (prefixed with ‘cap’ to capture any errors without stopping the script) to check if a baseline version of the current variable (denoted as ‘yvar'bsl’) exists in the dataset. 
+
+\textbf{NB}: The bsl suffix likely indicates a baseline measurement.
+
+\underline{\textbf{If baseline doesn't exist}}
+\vspace{0.3cm}Handling Non-Existent Baseline Variable:
+\begin{mdframed}
+\begin{verbatim}
+if _rc { 
+    loc proxyflag = 1 
+    loc created_var = 1
+    gen `y_var'_bsl = 1          // Create stand-in baseline var
+    gen m_`y_var'_bsl = 1        // Create stand-in baseline dummy var
+    estadd loc stat`blcontrols' = "No" : col`i' // Note that baseline controls not used
+}
+\end{verbatim}
+\end{mdframed}
+
+\begin{itemize}
+    \item •	This block is executed if the baseline variable does not exist (indicated by a non-zero return code rc from the previous confirm command).
+    \item It creates a new baseline variable (yvar'bsl) and a corresponding dummy variable (myvar'bsl`) filled with ones. These are placeholders indicating the absence of actual baseline data. 
+   \item The script also notes that baseline controls are not used in this case by adding a note ("No") to a local macro (statblcontrols').
+\end{itemize}
+
+\underline{\textbf{If baseline exists}}
+\vspace{0.3cm}Handling Existing Baseline Variable:
+\begin{mdframed}
+\begin{verbatim}
+else if !_rc {
+    loc proxyflag = 0 
+    loc created_var = 0
+    replace `y_var'_bsl = 0 if missing(`y_var'_bsl) 
+    // Replace baseline to 0 if missing
+    if ("`baselinevals'"=="baselinevals") 
+        estadd loc stat`blcontrols' = "Yes" : col`i' 
+    // Note baseline controls used 
+    else 
+        estadd loc stat`blcontrols' = "No" : col`i' 
+    // Note baseline controls not used 
+}
+\end{verbatim}
+\end{mdframed}
+
+\begin{itemize}
+    \item If the baseline variable exists (rc equals zero), this block replaces missing values in the baseline variable with zeros.
+    \item It also updates a local macro to indicate whether baseline controls are used in the analysis, based on whether baselinevals is set.
+\end{itemize}
+
+\vspace{0.3cm}Setting Local Macro for Baseline Variables:
+\begin{mdframed}
+\begin{verbatim}
+if "`baselinevals'"=="baselinevals" local blvals `y_var'_bsl m_`y_var'_bsl 
+else local blvals // Empty
+\end{verbatim}
+\end{mdframed}
+
+\vspace{0.3cm}This part sets the local macro blvals to include the baseline variable and its dummy counterpart if baseline values are being used in the analysis ("baselinevals" is set). If not, blvals is left empty.\newline
+
+In summary, this code segment meticulously handles baseline control variables in the analysis, addressing missing data and creating appropriate placeholders. It ensures that the analysis correctly accounts for the presence or absence of baseline data, which is vital for the integrity and accuracy of the statistical results.
+
+\subsubsection{RUN REGRESSION}
+\vspace{0.5cm}This section of the Stata code is focused on running various regression models as part of the statistical analysis. The script includes different types of regression analyses based on specific conditions, such as :
+\begin{enumerate}
+    \item Treatment on Treated (ToT)
+    \item "Simple" inverse probability weighting (simple IPW)
+    \item "Fancy" inverse probability weighting (fancy IPW)
+    \item Main / default regression
+\end{enumerate}
+
+\vspace{0.5cm}Let’s develop each one of them, starting first by:
+\begin{mdframed}
+\begin{verbatim}
+// RUN REGRESSION 
+
+	// TREATMENT ON TREATED (ToT)
+	if "`tot'"=="tot" { 
+		xi: ivreg `y_var'_end `blvals' `addlcontrols' i.`fixedeffects' (treat_received = treatment), r
+		loc coef "treat_received"
+		loc main "false"
+	}
+\end{verbatim}
+\end{mdframed}
+
+\vspace{0.3cm} The lines of codes indicate the following: 
+\begin{mdframed}
+\begin{verbatim}
+// RUN REGRESSION
+\end{verbatim}
+\end{mdframed}
+
+\vspace{0.3cm}This comment indicates the beginning of the regression analysis section of the code.
+
+\underline{\textbf{TREATMENT ON TREATED (ToT)}}\newline
+    
+\vspace{0.3cm}Treatment on Treated (ToT) Regression:
+
+\begin{mdframed}
+\begin{verbatim}
+if "`tot'"=="tot" { 
+    xi: ivreg `y_var'_end `blvals' `addlcontrols' 
+    i.`fixedeffects' (treat_received = treatment), r
+    loc coef "treat_received"
+    loc main "false"
+}
+\end{verbatim}
+\end{mdframed}
+
+
+\begin{itemize}
+    \item •	if "tot'"=="tot": This line checks if the tot` macro is set to "tot". If yes, it proceeds to run the Treatment on Treated regression. This conditional approach allows the code to selectively execute the ToT regression based on the user's specification.
+   \item xi: ivreg: The xi: prefix is used for handling categorical variables, which might be present in fixedeffects or other parts of the model. ivreg (instrumental variables regression) is then executed. This command is used to address potential endogeneity issues by using instruments.
+   \item yvar'end `blvals' `addlcontrols' i.`fixedeffects' (treatreceived = treatment), r: This part of the command specifies the regression model. It regresses the endline outcome variable (yvar'end) on the baseline values (blvals), additional control variables (addlcontrols), and includes fixed effects (fixedeffects). The part (treatreceived = treatment) indicates that treatreceived is an instrumental variable for treatment. The r option at the end specifies that robust standard errors should be used.
+   \item loc coef "treatreceived": Creates a local macro coef and sets it to "treatreceived". This is likely used later in the script to reference the coefficient of interest in the model.
+   \item loc main "false": Sets a local macro main to "false". This might be a flag used later in the script to control the flow of the code or to determine which sections of the code to execute.
+\end{itemize}
+
+\vspace{0.3cm} In summary, this code segment is essential for conducting a Treatment on Treated analysis within a broader statistical study. \newline
+
+It carefully sets up an instrumental variables regression to estimate the effect of treatment on a specific subset of the population, while controlling for various other factors and potential confounders. 
+The use of local macros (coef and main) indicates that these results feed into subsequent steps or conditional operations in the analysis.\newline
+
+\underline{\textbf{"SIMPLE" INVERSE PROBABILITY WEIGHTING (Simple IPW)}}
+
+\vspace{0.3cm}This section of the Stata code focuses on implementing a "Simple" Inverse Probability Weighting (Simple IPW) regression. Inverse Probability Weighting is a statistical technique used to adjust for potential sample bias, particularly in observational studies. This method aims to create a pseudo-population where the treatment assignment is independent of the measured covariates.\newline
+
+Simple IPW Conditional Check:
+\begin{mdframed}
+\begin{verbatim}
+if "`simpleipw'"=="simpleipw"{
+\end{verbatim}
+\end{mdframed}
+\vspace{0.3cm}Checks if the macro simpleipw is set to "simpleipw", indicating that a Simple IPW regression should be executed.
+
+\begin{enumerate}
+    \item Drop existing inverse probability weighting variable\newline
+
+Drop Existing IPW Variable:
+\begin{mdframed}
+\begin{verbatim}
+cap drop `ipw_simple3'
+\end{verbatim}
+\end{mdframed}
+
+\vspace{0.2cm}
+Attempts to drop any existing variable named ipwsimple3 (which is presumably used for IPW calculations) from the dataset. The cap command is used to capture any errors (for instance, if the variable doesn’t exist) without stopping the script.\newline
+
+Create Temporary IPW Variable:
+
+\begin{mdframed}
+\begin{verbatim}
+tempvar ipw_simple3
+gen `ipw_simple3' = .x
+\end{verbatim}
+\end{mdframed}
+
+\vspace{0.2cm} Creates a new temporary variable ipwsimple3 and initializes it with missing values (.x). This variable will be used to store the inverse probability weights.
+
+
+\item For each group, grab counts \newline
+After this, we will provide explanation of the following: 
+
+\begin{mdframed}
+\begin{verbatim}
+count if treatment==0 
+		local N_c = r(N)			
+		count if !mi(`y_var'_end) & treatment==0 
+		local N_c_found = r(N)
+		
+		count if treatment==1 & eligible==1
+		local N_t_e1ig = r(N)
+		count if !mi(`y_var'_end) & treatment==1 & eligible==1
+		local N_t_e1ig_found = r(N)
+		
+		count if treatment==1 & eligible==0
+		local N_t_notElig = r(N)
+		count if !mi(`y_var'_end) & treatment==1 & eligible==0
+		local N_t_notElig_found = r(N)
+\end{verbatim}
+\end{mdframed}
+
+\vspace{0.3cm}Counting and Calculating Weights:
+
+\begin{mdframed}
+\begin{verbatim}
+count if treatment==0 
+local N_c = r(N)
+...
+\end{verbatim}
+\end{mdframed}
+
+\begin{itemize}
+    \item This series of count commands calculates the number of observations in various subgroups of the data (such as treated, untreated, eligible, not eligible, etc.).
+    \item It stores these counts in local macros (like \texttt{N\_c}, \texttt{N\_c\_found}, etc.) for later use in calculating the IPW weights.
+\end{itemize}
+
+
+\item Use counts to calculate IPW \newline
+The next step consists of the following: 
+
+\begin{mdframed}
+\begin{verbatim}
+replace `ipw_simple3' = `N_c'/`N_c_found' if treatment==0 
+replace `ipw_simple3' = `N_t_e1ig'/`N_t_e1ig_found' 
+    if treatment==1 & eligible==1
+replace `ipw_simple3' = `N_t_notElig'/`N_t_notElig_found' 
+    if treatment==1 & eligible==0
+\end{verbatim}
+\end{mdframed}
+
+
+\vspace{0.2cm}Here, we are calculating IPW:
+
+\begin{mdframed}
+\begin{verbatim}
+replace `ipw_simple3' = `N_c'/`N_c_found' if treatment==0 
+...
+\end{verbatim}
+\end{mdframed}
+
+Calculates the inverse probability weights based on the counts obtained in the previous steps and assigns these weights to the ipwsimple3 variable.
+
+\item IPW regression \newline
+    Running the IPW Regression:
+    \begin{mdframed}
+    \begin{verbatim}
+    areg `y_var'_end treatment `blvals' `addlcontrols' 
+    `ifif' [pw=`ipw_simple3'], absorb(`fixedeffects') 
+    vce(`stderrors')
+    \end{verbatim}
+    \end{mdframed}
+\end{enumerate}
+
+
+\begin{itemize}
+    \item Conducts a regression (areg) of the endline outcome variable (\texttt{y\_var'\_end}) on the treatment, baseline variables (\texttt{blvals}), and additional controls, while accounting for fixed effects and using the calculated IPW weights.
+    \item The \texttt{vce(stderrors')} part indicates that the type of standard errors to be used is specified in the \texttt{stderrors} macro.
+\end{itemize}
+
+\begin{mdframed}
+\begin{verbatim}
+loc coef "treatment"
+loc main "false"
+\end{verbatim}
+\end{mdframed}
+
+\begin{itemize}
+    \item Sets the local macro coef to "treatment", likely indicating the variable of interest for coefficient extraction in subsequent analyses.
+    \item Sets main to "false", which might be used to control the flow of the script or as a flag for other conditional operations.
+\end{itemize}
+\vspace{0.3cm}
+We can conclude this code segment by saying that it efficiently implements the Simple IPW method to adjust for potential biases in the treatment assignment. \newline
+
+By creating a pseudo-population where the treatment assignment is more balanced with respect to observed covariates, this approach aims to provide more reliable and unbiased estimates of the treatment effect.\newline
+
+
+    
+
+\underline{\textbf{"FANCY" INVERSE PROBABILITY WEIGHTING (Fancy IPW)}}
+
+\vspace{0.3cm}This segment of the Stata code is dedicated to implementing a "Fancy" Inverse Probability Weighting (Fancy IPW) regression analysis. Fancy IPW is a more sophisticated version of inverse probability weighting, often used in observational studies to adjust for potential selection bias. \newline
+
+Fancy IPW Conditional Check:
+
+\begin{mdframed}
+\begin{verbatim}
+if "`fancyipw'"=="fancyipw" {
+\end{verbatim}
+\end{mdframed}
+
+\vspace{0.3cm}This line checks whether the fancyipw macro is set to "fancyipw", indicating that a Fancy IPW regression is to be executed.
+
+\begin{enumerate}
+    \item Drop existing inverse probability weighting variable \newline
+Drop Existing IPW Variables:
+\begin{mdframed}
+\begin{verbatim}
+cap drop ipw_temp
+cap drop pr_temp
+\end{verbatim}
+\end{mdframed}
+
+\vspace{0.2cm}Attempts to drop any existing variables named ipwtemp and prtemp from the dataset. The cap (capture) command is used to prevent the script from stopping if these variables do not exist.
+
+\item Predict weight \newline
+Predicting Weights Using Logistic Regression:
+\begin{mdframed}
+\begin{verbatim}
+logit surveyed `addlcontrols' 
+// <--- here can sub in other ML but i suspect it won't matter
+\end{verbatim}
+\end{mdframed}
+
+Runs a logistic regression (logit) with the variable surveyed as the dependent variable and additional control variables (addlcontrols) as independent variables.\newline 
+
+\textbf{NB}: The comment suggests that other machine learning methods could potentially be substituted, but logistic regression is expected to be sufficient.\newline
+
+Calculating Inverse Probability Weights:
+
+\begin{mdframed}
+\begin{verbatim}
+predict pr_temp, pr
+generate double ipw_temp = surveyed/pr_temp
+\end{verbatim}
+\end{mdframed}
+
+  \begin{itemize}
+    \item \texttt{predict pr\_temp, pr}: Generates predicted probabilities (propensity scores) from the logistic regression and stores them in the variable \texttt{pr\_temp}.
+    \item \texttt{generate double ipw\_temp = surveyed/pr\_temp}: Creates a new variable \texttt{ipw\_temp}, which contains the inverse of the predicted probabilities (\texttt{pr\_temp}). This is part of calculating the inverse probability weights.
+\end{itemize}
+
+
+\item IPW regression\newline
+Running the IPW Regression:
+
+\begin{mdframed}
+\begin{verbatim}
+areg `y_var'_end treatment `blvals' `addlcontrols' `ifif' 
+[pw=ipw_temp], absorb(`fixedeffects') vce(`stderrors')
+\end{verbatim}
+\end{mdframed}
+
+
+\vspace{0.2cm}Conducts a regression (areg) of the endline outcome variable (\texttt{y\_var'\_end}) on the treatment, baseline variables (\texttt{blvals}), and additional controls. This regression is weighted by the inverse probability weights (\texttt{[pw=ipw\_temp]}) and includes fixed effects. The type of standard errors is specified by the \texttt{stderrors} macro.\newline
+
+
+
+Setting Local Macros:
+\begin{mdframed}
+\begin{verbatim}
+loc coef "treatment"
+loc main "false"
+\end{verbatim}
+\end{mdframed}
+\begin{itemize}
+    \item Sets the local macro coef to "treatment", likely indicating the variable of interest for extracting the coefficient in subsequent analyses.
+    \item Sets main to "false", which might be used to control the flow of the script or as a flag for other conditional operations.
+\end{itemize}
+
+\vspace{0.2cm}To swap up, this code segment implements the Fancy IPW method, which is a more advanced approach to adjust for potential biases in treatment assignment.\newline
+
+By using predicted probabilities from a logistic regression to create inverse probability weights, the Fancy IPW aims to provide a more balanced representation of the population, thereby enabling more accurate estimation of treatment effects.
+  
+\end{enumerate}
+
+\underline{\textbf{MAIN / DEFAULT REGRESSION}}
+
+
+\vspace{0.2cm}This section outlines the process for running a main or default regression analysis. This type of regression is typically executed when specific alternative methods (like Treatment on Treated, Simple IPW, or Fancy IPW) are not indicated. It serves as the standard analysis approach in the absence of other specified conditions.\newline
+Comment on Main/Default Regression:
+
+\begin{mdframed}
+\begin{verbatim}
+// MAIN / DEFAULT REGRESSION
+\end{verbatim}
+\end{mdframed}
+\vspace{0.3cm}This comment signifies that the upcoming code block is for running the main or default regression model in the analysis.\newline
+
+
+
+Conditional Execution of Default Regression:
+\begin{mdframed}
+\begin{verbatim}
+else if "`main'"!="false" {
+\end{verbatim}
+\end{mdframed}
+\vspace{0.2cm}
+This line checks if the macro main is not set to "false". If main is anything other than "false", it implies that the default regression should be executed. This allows for conditional execution based on the analysis requirements or the data structure.\newline
+
+Running the Default Regression:
+\begin{mdframed}
+\begin{verbatim}
+qui areg `y_var'_end treatment `blvals' `addlcontrols' 
+`ifif', absorb(`fixedeffects') vce(`stderrors')
+\end{verbatim}
+\end{mdframed}
+
+\begin{itemize}
+    \item \texttt{qui areg}: Runs a regression using the \texttt{areg} command quietly (\texttt{qui}), meaning it suppresses output to the results window. This is useful for keeping the script's output clean and focused.
+    \item \texttt{y\_var'\_end treatment `blvals' `addlcontrols' `ifif'}: Specifies the regression model. It regresses the endline outcome variable (\texttt{y\_var'\_end}) on the treatment variable, baseline variables (\texttt{blvals}), additional control variables (\texttt{addlcontrols}), and includes any conditions specified in \texttt{ifif}.
+    \item \texttt{absorb(`fixedeffects')}: Includes fixed effects in the model, specified in the macro \texttt{fixedeffects}.
+	\item \texttt{vce(`stderrors')}: Specifies the type of standard errors to use, as defined in the macro \texttt{stderrors}.
+\end{itemize}
+
+\vspace{0.2cm}Setting Local Macro for Coefficient Reference:
+\begin{mdframed}
+\begin{verbatim}
+loc coef "treatment"
+\end{verbatim}
+\end{mdframed}
+
+\vspace{0.3cm}
+Sets a local macro coef to "treatment". This is likely used later in the script for referencing or extracting the coefficient associated with the treatment variable in the regression model. \newline
+
+
+In summary, this code segment related to the main or default regression analysis is crucial for conducting the standard regression analysis in situations where specialized methods are not required or specified.\newline
+
+What does this regression ensure? \newline
+It ensures that a comprehensive regression analysis is performed, including relevant variables, fixed effects, and specified conditions, thereby forming the backbone of the analytical process in the absence of more complex methods.
+
+\subsection{Replicate Table13A: Robustness Inverse probability weighting of key outcomes}
+\vspace{0.3cm} In The following Stata code we will replicate Table 13A titled Robustness Inverse probability weighting of key outcomes, that focuses on robustness checks through inverse probability weighting (IPW) of key outcomes. The code is structured to generate results for two different types of IPW, 'simple' and 'fancy', and includes detailed specifications for the variables and controls used in the analysis. \newline
+Here's a breakdown of the code:
+
+\vspace{0.2cm}Setting Controls:
+\begin{mdframed}
+\begin{verbatim}
+loc ipwcontrols num_adults_bsl nb_children_bsl hhsize_bsl avg_age_bsl 
+avg_edu_years_bsl gender_head_bsl age_head_bsl hh_head_over60_bsl 
+hh_head_educ_bsl disabl_head_bsl
+\end{verbatim}
+\end{mdframed}
+
+\begin{itemize}
+    \item \texttt{loc} defines a local macro named \texttt{ipwcontrols} containing a list of baseline control variables.
+    \item These control variables (e.g., \texttt{num\_adults\_bsl}, \texttt{nb\_children\_bsl}) are likely demographic or household characteristics measured at baseline.
+\end{itemize}
+
+
+\vspace{0.2cm} Looping through IPW Types:
+
+\begin{mdframed}
+\begin{verbatim}
+foreach type in simple fancy {
+\end{verbatim}
+\end{mdframed}
+\vspace{0.2cm} This loop iterates over both 'simple' and 'fancy' IPW methods, indicating an advanced approach to robustness checks. The inclusion of multiple IPW methods allows for comparison and validation of results under different weighting schemes.
+
+\vspace{0.3cm}Setting Label for Output Files
+\begin{mdframed}
+\begin{verbatim}
+loc typelabel = substr(proper("`type'"), 1, 4)
+\end{verbatim}
+\end{mdframed}
+\vspace{0.2cm}Here, the code dynamically creates labels (typelabel) based on the IPW method being used. This not only automates the file-naming process for output tables but also ensures clarity in distinguishing the results from different IPW methods.\newline
+
+\vspace{0.2cm}Generating the Table:
+\begin{mdframed}
+\begin{verbatim}
+yemenstandardtable asset_tot_value_end ctotalpc_end ctotalhh_end 
+inc_total_end inc_LS_end inc_nonLS_end fs_index_end savings_index_end 
+percep_econ_end hous_sindex_end debt_index_end, ///
+filename("ATable13_`typelabel'IPW") 
+title("Appendix Table 13: Treatment Effects on Key Welfare Outcomes 
+with Inverse Probability Weighting") /// 
+baselinevals winsorize `type'ipw /// 
+addlcontrols(`ipwcontrols') foldername("$rep_output")
+\end{verbatim}
+\end{mdframed}
+
+
+\begin{itemize}
+    \item The \texttt{yemenstandardtable} command is used to generate the results table. This command is a custom function defined elsewhere in the do-file.
+    \item The list of variables (e.g., \texttt{asset\_tot\_value\_end}, \texttt{ctotalpc\_end}, etc.) represents different welfare outcomes being analyzed.
+    \item The options such as \texttt{baselinevals}, \texttt{winsorize}, and \texttt{addlcontrols} tailor the regression to include baseline values, apply winsorization for outliers, and add additional controls (defined in \texttt{ipwcontrols}) respectively.
+    \item \texttt{\`type'ipw} dynamically selects the weighting method based on the loop iteration, showcasing the code's flexibility in adapting to different methodologies.
+\end{itemize}
+
+
+\vspace{0.2cm} Drafting a Codebook for Variables: A codebook provides descriptive information about variables, which is crucial for understanding the data's structure and characteristics.
+
+
+\begin{mdframed}
+\begin{verbatim}
+codebook num_adults_bsl nb_children_bsl hhsize_bsl avg_age_bsl 
+avg_edu_years_bsl age_head_bsl hh_head_over60_bsl gender_head_bsl 
+hh_head_educ_bsl disabl_head_bsl asset_tot_value_end ctotalpc_end 
+ctotalhh_end inc_total_end inc_LS_end inc_nonLS_end fs_index_end 
+savings_index_end percep_econ_end hous_sindex_end debt_index_end 
+endline_survey, compact
+\end{verbatim}
+\end{mdframed}
+
+
+\vspace{0.3cm}
+This line of code is used to generate a codebook for a set of baseline control variables such as \texttt{num\_adults\_bsl}, \texttt{nb\_children\_bsl}, which are demographic or household characteristics at baseline. These are crucial in the IPW process to adjust for potential confounders.
+\newline
+The term “\texttt{compact}” in the codebook command produces a more concise summary for each variable, focusing on key information without extensive details. This is useful for getting a quick overview of the variables.
+
+
+
+\end{document}
