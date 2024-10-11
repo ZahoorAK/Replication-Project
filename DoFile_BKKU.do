@@ -1,6 +1,6 @@
 **APA reference to the paper: Brune, L., Karlan, D., Kurdi, S., & Udry, C. (2022). Social protection amidst social upheaval: Examining the impact of a multi-faceted program for ultra-poor households in Yemen. Journal of Development Economics, 155, 102780.
 **Link to published paper: https://www-sciencedirect-com.ezpaarse.univ-paris1.fr/science/article/pii/S0304387821001395
-**Replication file prepared by: Cindy Fayad, Hala Afifi, Rana Doss, Yassmine Ben Hamida and Zahoor Ahmad Khan
+**Replication file prepared by: Zahoor Ahmad Khan
 **Replicating: Table1, Table2 and Table 13A
 
 
